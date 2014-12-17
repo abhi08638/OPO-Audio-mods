@@ -689,6 +689,8 @@
 
     <!-- Analog output devices -->
     <path name="ear">
+		<ctl name="SLIM RX1 MUX" value="AIF1_PB" />
+        <ctl name="SLIM_0_RX Channels" value="One" />
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="CLASS_H_DSM MUX" value="DSM_HPHL_RX1" />
         <ctl name="RX1 Digital Volume" value="90" />
@@ -706,6 +708,15 @@
         <ctl name="LINEOUT3 Volume" value="13" />
     </path>
 
+	<path name="spk-ear">
+		<path name="ear" />
+		<ctl name="RX3 MIX1 INP1" value="RX1" />
+        <ctl name="RDAC5 MUX" value="DEM3_INV" />
+        <ctl name="COMP2 Switch" value="1" />
+        <ctl name="LINEOUT1 Volume" value="13" />
+        <ctl name="LINEOUT3 Volume" value="13" />
+    </path>
+	
     <path name="hph">
         <ctl name="SLIM RX1 MUX" value="AIF1_PB" />
         <ctl name="SLIM RX2 MUX" value="AIF1_PB" />
@@ -731,8 +742,8 @@
 
     <!-- Output paths -->
     <path name="handset">
-        <ctl name="SLIM RX1 MUX" value="AIF1_PB" />
-        <ctl name="SLIM_0_RX Channels" value="One" />
+
+
         <path name="ear" />
     </path>
 
@@ -741,7 +752,8 @@
     </path>
 
     <path name="speaker">
-        <path name="spk" />
+		<path name="spk-ear" />
+		<ctl name="RX1 Digital Volume" value="90" />
         <ctl name="RX3 Digital Volume" value="80" />
         <ctl name="RX4 Digital Volume" value="80" />
     </path>
@@ -786,7 +798,6 @@
         <ctl name="DEC4 MUX" value="ADC3" />
         <ctl name="DEC4 Volume" value="84" />
     </path>
-
 
     <path name="anc-mic">
         <ctl name="DEC2 MUX" value="ADC5" />
@@ -894,7 +905,6 @@
     <!-- Stereo recording -->
     <path name="speaker-stereo-dmic-ef">
         <ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
-
         <ctl name="AIF1_CAP Mixer SLIM TX8" value="1" />
         <ctl name="SLIM_0_TX Channels" value="Two" />
         <ctl name="SLIM TX7 MUX" value="DEC4" />
