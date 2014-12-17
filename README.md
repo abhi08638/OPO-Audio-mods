@@ -1,4 +1,4 @@
 OPO-Audio-mods
+True Stereo
 ==============
-
-Triple Mono, Stereo, Main Mic Switch
+The lastest commit changes the stock mixer_paths.xml file to support stereo playback through the earpiece 
